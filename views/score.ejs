@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assessment Score</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #042028;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .score-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 90%;
+      width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #16a085;
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #2980b9;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+        background: #7ed6ef;
+        color: #042028;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      .score-container {
+        padding: 1.5rem;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="score-container">
+    <h1><%= test.testName %> - <%= careerPath %> - <%= level %></h1>
+
+    <% let attempt = user.attemptedAssessments.find(a =>
+      a.careerPath === careerPath && a.level === level && a.testName === test.testName); 
+    %>
+
+    <h3>Your score: <%= attempt.score %>/<%= test.questions.length %></h3>
+
+    <a href="/dashboard">Go to Dashboard</a>
+  </div>
+</body>
+</html>

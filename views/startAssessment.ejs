@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= test.testName %> - <%= careerPath %> - <%= level %></title>
+    <link href="/css/startAssessment.css" rel="stylesheet" >
+</head>
+<body>
+    <h1><%= test.testName %> - <%= careerPath %> - <%= level %></h1>
+
+    <% let attempt = user.attemptedAssessments.find(a =>
+  a.careerPath === careerPath && a.level === level && a.testName === test.testName); 
+%>
+
+<% if (attempt && !retestMode) { %>
+  <p>You have already responded. Your score: <%= attempt.score %>/<%= test.questions.length %></p>
+
+  <% if (!attempt.hasRetested) { %>
+    <form action="/assessments/<%= careerPath %>/<%= level %>/<%= test.testName %>/retest" method="POST">
+        <button type="submit">Retake Test</button>
+    </form>
+  <% } else { %>
+    <p><em>You’ve already used your one-time retest.</em></p>
+  <% } %>
+
+<% } else { %>
+  <form action="/assessments/<%= careerPath %>/<%= level %>/<%= test.testName %>/submit" method="POST">
+    <% test.questions.forEach((question, index) => { %>
+      <div>
+        <p><strong>Question <%= index + 1 %>:</strong> <%= question.question %></p>
+        <% question.options.forEach(option => { %>
+          <label>
+            <input type="radio" name="answers[<%= index %>]" value="<%= option %>" required>
+            <%= option %>
+          </label><br>
+        <% }); %>
+      </div>
+      <hr>
+    <% }); %>
+    <input type="hidden" name="retestMode" value="<%= retestMode ? 'true' : 'false' %>">
+    <button type="submit">Submit Test</button>
+  </form>
+<% } %>
+
+
+
+
+</body>
+</html>

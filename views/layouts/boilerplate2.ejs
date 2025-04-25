@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+    <link href="css/reso.css" rel="stylesheet" >
+    <link href="css/sidebar.css" rel="stylesheet" >
+    
+</head>
+<body>
+  <div class="Container">
+    <!-- Include Sidebar -->
+    <div class="sidebar">
+    <%- include("../includes/sidebar.ejs") -%>
+    </div>
+
+    <!-- Right Content Section -->
+    <main class="content">
+      <!-- Dynamic Page Content -->
+      <div class="content">
+      <%- body %>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+
+
+<style>
+  /* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container that holds both sidebar and content */
+.Container {
+  display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 260px; /* Adjust the width of the sidebar */
+  background-color: #042028;
+  color:#ffff;
+  padding: 20px;
+}
+
+/* Content area styling */
+.content {
+  flex-grow: 1; /* This makes the content area take the remaining space */
+  padding: 20px;
+  background-color: #ddd;
+  min-height: 100vh;
+}
+
+/* You can add more custom styles for sidebar links or content here */
+
+</style>
+<script>
+  const divs = document.querySelectorAll('.card'); // Select all divs
+  const divs2 = document.querySelectorAll('.booking'); // Select all divs
+  const mentors = document.querySelectorAll('.mentor-card'); // Select all divs
+const colors = ['#ecfafa', '#ecf2f9', '#eaf8ee', '#fff4eb']; // Define four colors
+
+divs.forEach((div, index) => {
+    div.style.backgroundColor = colors[index % colors.length]; // Assign colors cyclically
+});
+divs2.forEach((div, index) => {
+    div.style.backgroundColor = colors[index % colors.length]; // Assign colors cyclically
+});
+mentors.forEach((div, index) => {
+    div.style.backgroundColor = colors[index % colors.length]; // Assign colors cyclically
+});
+
+</script>

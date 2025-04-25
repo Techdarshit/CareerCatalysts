@@ -1,0 +1,231 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.feature-card
+{
+  background-color: aliceblue;
+  margin: 20px;
+  color: #042028;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  border-radius: 15px;
+  padding: 10px;
+  position: relative;
+  left:1.5rem;
+}
+.row
+{
+  margin:40px 20px 0px 60px;
+ /* text-align: center; */
+ overflow-x: hidden;
+  
+}
+.feature-card h3,p{
+  display: inline;
+}
+
+.feature-card p{
+  /* padding-left: 1.5rem; */
+  margin: 10px;
+}
+
+i{
+  font-size: 2.5rem;
+  color: #7ed6ef;
+}
+.herosec
+{
+  text-align: center;
+}
+
+
+.btns {
+  margin-top: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap */
+  gap: 10px; /* Adds spacing between buttons */
+  position: relative;
+  right: 2.8rem;
+}
+
+.btns a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 180px; /* Default width */
+}
+
+.btns button {
+  width: 100%; /* Make button take full width of anchor */
+  height: 50px; /* Default height */
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+/* Button colors */
+#btn1 {
+  background-color: #7ed6ef;
+  color: #042028;
+}
+
+#btn2 {
+  background-color: #042028;
+  border: 1.8px solid #7ed6ef;
+  color: #7ed6ef;
+}
+
+/* Hover effects */
+#btn1:hover {
+  background-color: #042028;
+  border: 1.8px solid #7ed6ef;
+  color: #7ed6ef;
+}
+
+#btn2:hover {
+  background-color: #7ed6ef;
+  color: #042028;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 992px) {  /* Tablets */
+  .btns button {
+    width: 160px; /* Slightly smaller */
+    height: 45px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {  /* Smaller tablets & large phones */
+  .btns button {
+    width: 140px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {  /* Mobile Phones */
+  .btns {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+  .btns a {
+    width: 100%; /* Full width */
+    max-width: 250px; /* Set a max width to avoid too large buttons */
+  }
+  .btns button {
+    width: 60%;
+    font-size: 1rem;
+    height: 50px;
+  }
+}
+
+
+/* .btns button{
+  width:180px;
+  height:50px;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 500;
+  border:2px solid black;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.btns a{
+  width:180px;
+  height:50px;
+}
+#btn1
+{
+  background-color: #7ed6ef;
+  color:#042028;
+}
+#btn2
+{
+  background-color: #042028;
+  border:1.8px solid #7ed6ef;
+  color:#7ed6ef;
+}
+
+#btn1:hover
+{
+  background-color: #042028;
+  border:1.8px solid #7ed6ef;
+  color:#7ed6ef;
+}
+#btn2:hover
+{
+  background-color: #7ed6ef;
+  color:#042028;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* .hero
+{
+  display: flex;
+  flex-direction: column;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ padding: 20px;
+ gap:20px;
+ 
+}
+.allcards
+{
+  display: flex;
+ flex-wrap: wrap;
+ width: 100%;
+ justify-content: center;
+ padding: 10px;
+
+
+}
+.feature-card {
+  width: 40% !important;
+  min-width: unset !important;
+  max-width: 100%;
+  background-color: hsla(0, 0%, 94%, 0.817); 
+  color:#042028;
+  padding: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1024px) { 
+  .feature-card {
+      width: 45% !important;
+  }
+}
+@media (max-width: 768px) {
+  .allcards {
+      flex-direction: column;
+      align-items: center;
+  }
+  .feature-card {
+      width: 90% !important;
+  }
+} */

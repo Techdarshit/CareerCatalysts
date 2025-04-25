@@ -1,0 +1,21 @@
+<% layout("/layouts/boilerplate2") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Assessment Level</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/assessments.css" rel="stylesheet">
+</head>
+<body>
+  <div class="assessment-container">
+    <h2>Choose Your Assessment Level for <%= careerPath %></h2>
+
+    <ul class="level-list">
+      <li><a href="/assessments/<%= careerPath %>/beginner">Beginner</a></li>
+      <li><a href="/assessments/<%= careerPath %>/intermediate">Intermediate</a></li>
+      <li><a href="/assessments/<%= careerPath %>/advanced">Advanced</a></li>
+    </ul>
+  </div>
+</body>
+</html>

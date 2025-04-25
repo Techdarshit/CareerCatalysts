@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= careerPath %> - <%= level %> Assessments</title>
+    <link href="/css/assessmentPage.css" rel="stylesheet" > <!-- Add your CSS file -->
+</head>
+<body>
+    <h1><%= careerPath %> - <%= level %> Level Assessments</h1>
+
+    <% if (tests.length === 0) { %>
+        <p>No tests available for this level.</p>
+    <% } else { %>
+        <ul>
+            <% tests.forEach(test => { %>
+                <li>
+                    <a href="/assessments/<%= careerPath %>/<%= level %>/<%= test.testName %>">
+                        <%= test.testName %>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    
+    <a href="/assessments">Back to assessments</a>
+</body>
+</html>

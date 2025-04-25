@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg  border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home"><button style="background-color: #042028; color:#ffff ;border: none;"> Career Catalysts</button></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="secondpart">
+          <ul class="navbar-nav justify-content-end">
+            <li class="nav-item me-3">
+              <a class="nav-link  home" aria-current="page" href="home">Home</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link about" href="/about">About</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link support" href="/support">support</a>
+            </li>
+            <li class="nav-item itemimp">
+              <a href="/dashboard" class="nav-link feature" >Profile</a>
+            </li>
+            </ul>
+        </div>
+        <ul>
+          <li class="nav-item me-3">
+            <a class="nav-link signin" href="/login">Sign in</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script>
+    function navigateToFeature() {
+      const select = document.getElementById("features");
+      const selectedValue = select.value;
+      if (selectedValue) {
+        window.location.href = selectedValue; // Redirect to the selected route
+      }
+    }
+  </script>
+  <!-- <nav>
+    <div id="maindiv">
+     <div>
+      <a>abv</a>
+     </div>
+      <div id="secdiv">
+        <a>abv</a>
+        <a>abv</a>
+        <a>abv</a>
+      </div>
+    </div>
+  </nav> -->

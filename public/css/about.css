@@ -1,0 +1,97 @@
+/*About us page styling */
+
+.about-us-section {
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .about-us-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #7ed6ef;
+    line-height:normal
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin-bottom: 7rem;
+  }
+  .right-column
+  {
+    margin-top: 60px;
+    
+  }
+  .left-column h4,
+  .right-column h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .left-column p,
+  .right-column p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #cfd8dc;
+  }
+  
+  .left-column img,
+  .right-column img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 40px;
+  }
+.left-column img{
+    position: relative;
+    top:10rem;
+  }
+  .right-column .why-choose-us {
+    background-color: #2d3e4e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .right-column .why-choose-us h4 {
+    color: #7ed6ef;
+  }
+  
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+  
+    .left-column,
+    .right-column {
+      max-width: 100%;
+    }
+  }
+  
+  .why-choose-us
+  {
+    position: relative;
+    top:50px;
+   display: flex;
+   flex-direction: column;
+  align-items: baseline;
+    background-color: #042028 !important;
+  }
+  
+.lefty
+{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  position: relative;
+  top:6rem;
+}

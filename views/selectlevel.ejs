@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/selectlevel.css">
+<div class="container">
+    <h2>Your Selected Path: <%= user.activeCareerPath %></h2>
+  
+    <!-- Level Selection Buttons -->
+    <form action="/courses/<%= user.activeCareerPath %>/beginner" method="GET">
+      <button type="submit">Beginner</button>
+    </form>
+  
+    <form action="/courses/<%= user.activeCareerPath %>/intermediate" method="GET">
+      <button type="submit" <%= progress.beginner >= 80 ? "" : "disabled" %> >Intermediate</button>
+    </form>
+  
+    <form action="/courses/<%= user.activeCareerPath %>/advanced" method="GET">
+      <button type="submit" <%= progress.intermediate >= 80 ? "" : "disabled" %> >Advanced</button>
+    </form>
+    <a href="/dashboard">Back to Dashboard</a>
+  </div>
+  

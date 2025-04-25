@@ -1,0 +1,141 @@
+.careerpathcard
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.careerpathcard div{
+  margin-left: 20px;
+}
+.careerpathcard h2{
+  text-align: center;
+}
+.careerpathcard .div1{
+  position: relative;
+  bottom: 37px;
+}
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+   
+  }
+  .userdetail
+  {
+    color: #042028;
+    margin-bottom: 20px;
+  }
+  .card {
+    background-color: #ecfafa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #042028;
+  }
+  .card h2, .card h3 {
+    margin-bottom: 15px;
+    color: #042028;
+  }
+  .card ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+  .card ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+  }
+  .progress-bar {
+    width: 100%;
+    background-color: #ffff;
+    border-radius: 8px;
+    height: 20px; /* Increased height for better visibility */
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .progress-bar span {
+    display: block;
+    height: 100%;
+    background-color: #53e4f4;
+    border-radius: 8px;
+    text-align: center;
+    color: #042028;
+    line-height: 20px; /* Center percentage text */
+  }
+  .btn {
+    display: inline-block;
+    background-color: #7ed6ef;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .btn:hover {
+    background-color: #4fa3e1;
+  }
+  .badge {
+    background-color: #cce5ff;
+    color: #004085;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center; /* Align radio buttons and text */
+  }
+  .form-group label {
+    margin-left: 10px;
+    display: inline-block;
+  }
+  .chart-container {
+    max-width: 100%;
+    overflow: auto;
+  }
+  .text-muted {
+    color: #6c757d;
+  }
+  .link {
+    color: #2dc9f5;
+    opacity: 1;
+    text-decoration: none;
+  }
+  .link:hover {
+    text-decoration: underline;
+  }
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .card {
+    flex: 1 1 38%;
+    min-width: 300px;
+  }
+  .quick-links-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .quick-links-card ul li {
+    margin-bottom: 10px;
+  }
+  .quick-links-card ul li a {
+    color: #2dc9f5;
+    text-decoration: none;
+  }
+  .quick-links-card ul li a:hover {
+    text-decoration: underline;
+  }
+
+ .div1{
+  /* display: flex; */
+  position: relative;
+  top:0.09rem;
+ }

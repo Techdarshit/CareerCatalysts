@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Paths</title>
+  <link href="css/careerpath.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Choose Your Career Path</h1>
+  <form id="career-form" action="/career-paths" method="POST">
+    <label><input type="radio" name="careerPath" value="Web Development" onclick="showDetails('webdev')"> Web Development</label>
+    <label><input type="radio" name="careerPath" value="Data Science" onclick="showDetails('datascience')"> Data Science</label>
+    <label><input type="radio" name="careerPath" value="Machine Learning" onclick="showDetails('ml')"> Machine Learning</label>
+    <label><input type="radio" name="careerPath" value="Artificial Intelligence" onclick="showDetails('ai')"> Artificial Intelligence</label>
+    <label><input type="radio" name="careerPath" value="DSA" onclick="showDetails('dsa')"> Data Structure(DSA)</label>
+    <label><input type="radio" name="careerPath" value="Cybersecurity" onclick="showDetails('cyber')"> Cybersecurity</label>
+    <label><input type="radio" name="careerPath" value="Cloud Computing" onclick="showDetails('cloud')"> Cloud Computing</label>
+
+    <!-- Career Path Details Section -->
+    <div id="career-details" class="info-box">
+      <h3 id="career-title"></h3>
+      <p id="career-desc"></p>
+      <strong>Real-World Use Cases:</strong>
+      <ul id="career-usecases"></ul>
+      <strong>Skills Required:</strong>
+      <p id="career-skills"></p>
+      <strong>Estimated Learning Duration:</strong>
+      <p id="career-duration"></p>
+      <strong>Salary Range:</strong>
+      <p id="career-salary"></p>
+    </div>
+
+    <button type="submit">Proceed</button>
+  </form>
+
+  <style>
+    .info-box {
+      display: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      background: #f9f9f9;
+    }
+  </style>
+
+  <script>
+    const careerData = {
+      webdev: {
+        title: "Web Development",
+        desc: "Web development involves designing, building, and maintaining websites or web applications.",
+        usecases: ["E-commerce websites", "Portfolio sites", "Web applications"],
+        skills: "HTML, CSS, JavaScript, React, Node.js, Databases",
+        duration: "4-8 months",
+        salary: "$5,000 - $12,000 per year"
+      },
+      datascience: {
+        title: "Data Science",
+        desc: "Data Science involves analyzing large data sets to extract insights using Python, SQL, and machine learning techniques.",
+        usecases: ["Netflix recommendations", "Fraud detection", "Medical diagnoses"],
+        skills: "Python, SQL, Machine Learning, Statistics",
+        duration: "6-12 months",
+        salary: "$8,000 - $15,000 per year"
+      },
+      ml: {
+        title: "Machine Learning",
+        desc: "Machine Learning focuses on training algorithms to make predictions and automate tasks using AI models.",
+        usecases: ["Self-driving cars", "Speech recognition", "Chatbots"],
+        skills: "Python, TensorFlow, Deep Learning, AI Models",
+        duration: "6-12 months",
+        salary: "$9,000 - $18,000 per year"
+      },
+      ai: {
+        title: "Artificial Intelligence",
+        desc: "AI involves building systems that can perform tasks that typically require human intelligence.",
+        usecases: ["Personal assistants", "Image recognition", "Smart devices"],
+        skills: "Python, Neural Networks, Deep Learning, NLP",
+        duration: "6-10 months",
+        salary: "$10,000 - $20,000 per year"
+      },
+      dsa: {
+        title: "Data Structures and Algorithms (DSA)",
+        desc: "DSA focuses on organizing and manipulating data efficiently for solving computational problems.",
+        usecases: ["Coding interviews", "Competitive programming", "Optimizing software"],
+        skills: "C++/Java/Python, Trees, Graphs, Sorting, Searching",
+        duration: "4-6 months",
+        salary: "$7,000 - $14,000 per year"
+      },
+      cyber: {
+        title: "Cybersecurity",
+        desc: "Cybersecurity involves protecting systems, networks, and programs from digital attacks.",
+        usecases: ["Threat detection", "Network security", "Penetration testing"],
+        skills: "Networking, Ethical Hacking, Firewalls, Linux, Python",
+        duration: "6-10 months",
+        salary: "$8,000 - $16,000 per year"
+      },
+      cloud: {
+        title: "Cloud Computing",
+        desc: "Cloud Computing involves delivering computing services like servers, storage, and databases over the internet.",
+        usecases: ["Hosting web applications", "Data backup", "DevOps workflows"],
+        skills: "AWS, Azure, GCP, Docker, Kubernetes",
+        duration: "5-9 months",
+        salary: "$9,000 - $17,000 per year"
+      }
+    };
+
+    function showDetails(career) {
+      const details = careerData[career];
+      
+      document.getElementById("career-title").innerText = details.title;
+      document.getElementById("career-desc").innerText = details.desc;
+      document.getElementById("career-skills").innerText = details.skills;
+      document.getElementById("career-duration").innerText = details.duration;
+      document.getElementById("career-salary").innerText = details.salary;
+
+      // Update use cases list
+      const usecaseList = document.getElementById("career-usecases");
+      usecaseList.innerHTML = "";
+      details.usecases.forEach(usecase => {
+        let li = document.createElement("li");
+        li.innerText = usecase;
+        usecaseList.appendChild(li);
+      });
+
+      // Show the details box
+      document.getElementById("career-details").style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<% layout("/layouts/boilerplate2") %>
+<main class="roadmap-container">
+    <h2><%= roadmap.careerPath %> Roadmap</h2>
+  
+    <div class="tabs">
+      <button class="tab-btn active" data-level="beginner">Beginner</button>
+      <button class="tab-btn" data-level="intermediate">Intermediate</button>
+      <button class="tab-btn" data-level="advanced">Advanced</button>
+    </div>
+  
+    <div class="roadmap-content">
+      <!-- Beginner Section -->
+      <div class="roadmap-section active" id="beginner">
+        <h3>Beginner Roadmap</h3>
+        <ul>
+          <% roadmap.levels.beginner.forEach(step => { %>
+            <li>
+              <input type="checkbox"> <%= step.topic %> (<%= step.duration %>)
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+  
+      <!-- Intermediate Section -->
+      <div class="roadmap-section" id="intermediate">
+        <h3>Intermediate Roadmap</h3>
+        <ul>
+          <% roadmap.levels.intermediate.forEach(step => { %>
+            <li>
+              <input type="checkbox"> <%= step.topic %> (<%= step.duration %>)
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+  
+      <!-- Advanced Section -->
+      <div class="roadmap-section" id="advanced">
+        <h3>Advanced Roadmap</h3>
+        <ul>
+          <% roadmap.levels.advanced.forEach(step => { %>
+            <li>
+              <input type="checkbox"> <%= step.topic %> (<%= step.duration %>)
+            </li>
+          <% }) %>
+        </ul>
+      </div>
+    </div>
+  </main>
+<style>
+    .roadmap-container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  background: #7ed6ef;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.tab-btn.active {
+  background: #5596da;
+  color: white;
+}
+
+.roadmap-section {
+  display: none;
+  text-align: left;
+}
+
+.roadmap-section.active {
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+</style>  
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".roadmap-section");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function () {
+      tabs.forEach(t => t.classList.remove("active"));
+      this.classList.add("active");
+
+      sections.forEach(section => section.classList.remove("active"));
+      document.getElementById(this.getAttribute("data-level")).classList.add("active");
+    });
+  });
+});
+
+</script>

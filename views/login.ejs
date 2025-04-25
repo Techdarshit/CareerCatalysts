@@ -1,0 +1,32 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <div class="container-fluid vh-100 d-flex align-items-center justify-content-center logindiv">
+        <div class="row w-75 shadow-lg">
+            <!-- Left Section -->
+            <div class="col-md-6 p-5 bg-white logIN">
+                <h1 class="mb-3">Welcome back</h1>
+                <p class="mb-4" style="color:#402028">Please enter your details</p>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <label for="InputUserName" class="form-label" style="color:#402028">User name</label>
+                        <input type="text" id="InputUserName" name="username" class="form-control" placeholder="Enter your name" required>
+                        <div class="invalid-feedback">Please enter your name.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="InputPass" class="form-label" style="color:#402028">Password</label>
+                        <input type="password" id="InputPass" name="password" class="form-control" placeholder="Enter your password" required>
+                        <div class="invalid-feedback">Please enter your password.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 loginbtn">Sign in</button>
+                    <p class="text-center mt-4" style="color:#402028; display: block;">Don't have an account? <a href="/signup" class="text-decoration-none signupAnc" style="color:black;">Sign up</a></p>
+                </form>
+            </div>
+            <!-- Right Section -->
+            <div class="col-md-6 p-0 bg-light">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/003/689/228/small_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg" alt="Illustration" class="img-fluid full-height-img">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

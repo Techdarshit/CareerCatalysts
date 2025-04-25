@@ -1,0 +1,91 @@
+<% layout("/layouts/boilerplate2") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="css/dashboard.css" rel="stylesheet">
+</head>
+<body>
+  <div class="userdetail">
+    <h2>Hello,<%= currUser.username %></h2>
+  <b><p>Welcome to career catalysts,let's catch evrything you need here..</p></b>
+  </div>
+  <div class="container">
+    <% if (user.activeCareerPath && content) { %>
+      <div class="cards-container">
+        <!-- Career Path Card -->
+        <div class="card careerpathcard">
+          <h2>Your Selected Career Path: <span><%= user.activeCareerPath %></span></h2>
+
+          <div class="div1">
+            <h3>Roadmap:</h3>
+            <a href="/resources" target="_blank" class="link">View Roadmap</a>
+          </div>
+          <div >
+            <h3>courses:</h3>
+            <a href="/courses" target="_blank" class="link">View courses</a>
+          </div>
+        </div>
+      </div>
+
+        
+
+        <!-- Achievements Card -->
+        <div class="card">
+          <h2>Your Achievements</h2>
+          <div>
+            <% if (user.badges.length > 0) { %>
+              <ul>
+                <% user.badges.forEach(badge => { %>
+                  <li class="badge">
+                    <strong><%= badge.name %></strong>
+                    <p class="text-muted"><%= badge.description %></p>
+                    <small>Earned on <%= badge.earnedAt.toLocaleDateString() %></small>
+                  </li>
+                <% }) %>
+              </ul>
+            <% } else { %>
+              <p class="text-muted">You haven't earned any badges yet. Start completing internships and projects to earn achievements!</p>
+            <% } %>
+          </div>
+        </div>
+
+        <!-- Update Career Path Card -->
+        <div class="card">
+          <h2>Update Your Career Path</h2>
+          <form action="/updateCareerPath" method="POST">
+            <% careerPaths.forEach(path => { %>
+              <div class="form-group">
+                <input type="radio" name="newCareerPath"  value="<%= path %>" required class="form-radio">
+                <label><%= path %></label>
+              </div>
+            <% }) %>
+            <button type="submit" class="btn">Update Path</button>
+          </form>
+        </div>
+         <!-- Quick Links Card -->
+         <div class="card quick-links-card">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="/profile" class="link">Your Profile</a></li>
+            <li><a href="/career-paths" class="link">Select Career Path</a></li>
+            <li><a href="/roadmaps" class="link">Resources</a></li>
+            <li><a href="/internships" class="link">Internships</a></li>
+            <li><a href="/projects" class="link">Projects</a></li>
+            <li><a href="/mock-interviews" class="link">Mock Interviews</a></li>
+            <li><a href="/resume" class="link">Your Resume</a></li>
+          </ul>
+        </div>
+
+    <% } else { %>
+      <div class="card">
+        <h2>You haven't selected a career path yet.</h2>
+        <a href="/career-paths" class="link">Choose Your Career Path</a>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>
