@@ -490,7 +490,7 @@ app.post("/contact",(req,res)=>
   let {firstName,lastName}=req.body;
   res.render("thankYou.ejs",{firstName,lastName});
 })
-app.get("/home",(req,res)=>
+app.get("/",(req,res)=>
 {
   res.render("home.ejs");
 });
